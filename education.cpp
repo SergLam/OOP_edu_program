@@ -3,7 +3,7 @@
 void MainWindow::Education(){
     // Set pictures to labels //
     button_education->setEnabled(false);
-    child->setWindowTitle("Теоретические сведения");
+    child->setWindowTitle("РўРµРѕСЂРµС‚РёС‡РµСЃРєРёРµ СЃРІРµРґРµРЅРёСЏ");
     child->setMinimumWidth(750);
     edu_v_layout = new QVBoxLayout(child);
     area = new QScrollArea(child);
@@ -26,7 +26,7 @@ void MainWindow::Education(){
     timer = new QTimer();
     time_edu_start = QTime::currentTime().toString("hh:mm:ss");
     connect(timer, SIGNAL(timeout()), this, SLOT(slotTimerAlarm()));
-    timer->start(1000); // И запустим таймер
+    timer->start(1000); 
     // Add scrolbars to widget
     QWidget * scrollAreaWidgetContents = new QWidget;
     scrollAreaWidgetContents->setLayout(edu_scroll_layout);
