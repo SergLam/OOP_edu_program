@@ -20,13 +20,13 @@ MainWindow::MainWindow(QWidget *parent)
     this->setPalette(palette);
     this->setFixedSize(340,340);
     //
-    this->setWindowTitle("ÎÎÏ: êëàññû è îáúåêòû");
-    button_education = new QPushButton("Îáó÷åíèå");
-    button_test = new QPushButton("Òåñò");
+    this->setWindowTitle("ÐžÐžÐŸ: ÐºÐ»Ð°ÑÑÑ‹ Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ñ‹");
+    button_education = new QPushButton("ÐžÐ±ÑƒÑ‡ÐµÐ½Ð¸Ðµ");
+    button_test = new QPushButton("Ð¢ÐµÑÑ‚");
     glMain = new QGridLayout;
     vert_lay = new QVBoxLayout;
     lay_1 = new QHBoxLayout;
-    label1 = new QLabel("Âûáåðèòå ðåæèì:");
+    label1 = new QLabel("Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ñ€ÐµÐ¶Ð¸Ð¼:");
     wCenter = new QWidget;
 
     lay_1->addWidget(label1);
