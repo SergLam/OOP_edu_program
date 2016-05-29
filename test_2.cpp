@@ -7,47 +7,47 @@ void MainWindow::Test_2(){
     // Check answers from previous page //
     result=0;
     QString cb = cobm_1->currentText();
-    if(cb=="â"){
+    if(cb=="Ð²"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="â"){
+    if(cb!="Ð²"){
      result_num.append(false);
     }
     cb.clear();
     cb = cobm_2->currentText();
-    if(cb=="á"){
+    if(cb=="Ð±"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="á"){
+    if(cb!="Ð±"){
      result_num.append(false);
     }
     cb.clear();
     cb = cobm_3->currentText();
-    if(cb=="â"){
+    if(cb=="Ð²"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="â"){
+    if(cb!="Ð²"){
      result_num.append(false);
     }
     cb.clear();
     cb = cobm_4->currentText();
-    if(cb=="á"){
+    if(cb=="Ð±"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="á"){
+    if(cb!="Ð±"){
      result_num.append(false);
     }
     cb.clear();
     cb = cobm_5->currentText();
-    if(cb=="â"){
+    if(cb=="Ð²"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="â"){
+    if(cb!="Ð²"){
      result_num.append(false);
     }
     ///////////////////////////////
@@ -88,15 +88,15 @@ void MainWindow::Test_2(){
     cobm_9 = new QComboBox;
     cobm_10 = new QComboBox;
     //
-    cobm_6->addItems(QStringList() <<"à"<<"á"<<"â"<<"ã");
+    cobm_6->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²"<<"Ð³");
     //
-    cobm_7->addItems(QStringList() <<"à"<<"á"<<"â"<<"ã");
+    cobm_7->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²"<<"Ð³");
     //
-    cobm_8->addItems(QStringList() <<"à"<<"á"<<"â");
+    cobm_8->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²");
     //
-    cobm_9->addItems(QStringList() <<"à"<<"á"<<"â"<<"ã");
+    cobm_9->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²"<<"Ð³");
     //
-    cobm_10->addItems(QStringList() <<"à"<<"á"<<"â");
+    cobm_10->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²");
     //
     //
     test_grid_2 = new QGridLayout;
@@ -111,10 +111,10 @@ void MainWindow::Test_2(){
     test_grid_2->addWidget(question_10,4,0);
     test_grid_2->addWidget(cobm_10,4,1);
 
-    check_2 = new QPushButton("Äàëåå");
+    check_2 = new QPushButton("Ð”Ð°Ð»ÐµÐµ");
     test_grid_2->addWidget(check_2,5,1);
     //
-    child_test_2->setWindowTitle("Òåñòèðîâàíèå - ÎÎÏ: êëàññû è îáúåêòû (10 èç 18)");
+    child_test_2->setWindowTitle("Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ - ÐžÐžÐŸ: ÐºÐ»Ð°ÑÑÑ‹ Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ñ‹ (10 Ð¸Ð· 18)");
     //
     child_test_2->setLayout(test_grid_2);
     child_test_2->show();
