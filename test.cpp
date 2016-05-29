@@ -17,7 +17,7 @@ void MainWindow::Test(){
     timer_test = new QTimer();
     time_test_start = QTime::currentTime().toString("hh:mm:ss");
     connect(timer_test, SIGNAL(timeout()), this, SLOT(slotTimerAlarm_test()));
-    timer_test->start(1000); // È çàïóñòèì òàéìåð
+    timer_test->start(1000); // Ãˆ Ã§Ã Ã¯Ã³Ã±Ã²Ã¨Ã¬ Ã²Ã Ã©Ã¬Ã¥Ã°
     //
     // Test page 1 //
     question_1 = new QLabel();
@@ -57,15 +57,15 @@ void MainWindow::Test(){
     cobm_4 = new QComboBox;
     cobm_5 = new QComboBox;
     //
-    cobm_1->addItems(QStringList() <<"à"<<"á"<<"â"<<"ã");
+    cobm_1->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²"<<"Ð³");
     //
-    cobm_2->addItems(QStringList() <<"à"<<"á"<<"â");
+    cobm_2->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²");
     //
-    cobm_3->addItems(QStringList() <<"à"<<"á"<<"â"<<"ã");
+    cobm_3->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²"<<"Ð³");
     //
-    cobm_4->addItems(QStringList() <<"à"<<"á"<<"â");
+    cobm_4->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²");
     //
-    cobm_5->addItems(QStringList() <<"à"<<"á"<<"â");
+    cobm_5->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²");
     //
     //
     test_grid_1 = new QGridLayout;
@@ -83,10 +83,10 @@ void MainWindow::Test(){
 
 
     //
-    check_1 = new QPushButton("Äàëåå");
+    check_1 = new QPushButton("Ð”Ð°Ð»ÐµÐµ");
     test_grid_1->addWidget(check_1,5,1);
     //
-    child_test_1->setWindowTitle("Òåñòèðîâàíèå - ÎÎÏ: êëàññû è îáúåêòû (5 èç 18)");
+    child_test_1->setWindowTitle("Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ - ÐžÐžÐŸ: ÐºÐ»Ð°ÑÑÑ‹ Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ñ‹ (5 Ð¸Ð· 18)");
     //
     child_test_1->setLayout(test_grid_1);
     child_test_1->show();
