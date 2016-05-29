@@ -6,47 +6,47 @@ void MainWindow::Test_4(){
     }
     // Check answers from previous page //
     QString cb = cobm_11->currentText();
-    if(cb=="ã"){
+    if(cb=="Ð³"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="ã"){
+    if(cb!="Ð³"){
      result_num.append(false);
     }
     cb.clear();
     cb = cobm_12->currentText();
-    if(cb=="â"){
+    if(cb=="Ð²"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="â"){
+    if(cb!="Ð²"){
      result_num.append(false);
     }
     cb.clear();
     cb = cobm_13->currentText();
-    if(cb=="à"){
+    if(cb=="Ð°"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="à"){
+    if(cb!="Ð°"){
      result_num.append(false);
     }
     cb.clear();
     cb = cobm_14->currentText();
-    if(cb=="á"){
+    if(cb=="Ð±"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="á"){
+    if(cb!="Ð±"){
      result_num.append(false);
     }
     cb.clear();
     cb = cobm_15->currentText();
-    if(cb=="à"){
+    if(cb=="Ð°"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="à"){
+    if(cb!="Ð°"){
      result_num.append(false);
     }
     //qDebug()<<result<<result_num;
@@ -73,11 +73,11 @@ void MainWindow::Test_4(){
     cobm_17 = new QComboBox;
     cobm_18 = new QComboBox;
     //
-    cobm_16->addItems(QStringList() <<"à"<<"á"<<"â");
+    cobm_16->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²");
     //
-    cobm_17->addItems(QStringList() <<"à"<<"á"<<"â"<<"ã");
+    cobm_17->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²"<<"Ð³");
     //
-    cobm_18->addItems(QStringList() <<"à"<<"á"<<"â");
+    cobm_18->addItems(QStringList() <<"Ð°"<<"Ð±"<<"Ð²");
     //
     test_grid_4 = new QGridLayout;
     test_grid_4->addWidget(question_16,0,0);
@@ -87,10 +87,10 @@ void MainWindow::Test_4(){
     test_grid_4->addWidget(question_18,2,0);
     test_grid_4->addWidget(cobm_18,2,1);
     //
-    check_4 = new QPushButton("Äàëåå");
+    check_4 = new QPushButton("Ð”Ð°Ð»ÐµÐµ");
     test_grid_4->addWidget(check_4,5,1);
     //
-    child_test_4->setWindowTitle("Òåñòèðîâàíèå - ÎÎÏ: êëàññû è îáúåêòû (18 èç 18)");
+    child_test_4->setWindowTitle("Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ - ÐžÐžÐŸ: ÐºÐ»Ð°ÑÑÑ‹ Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ñ‹ (18 Ð¸Ð· 18)");
     //
     child_test_4->setLayout(test_grid_4);
     child_test_4->show();
