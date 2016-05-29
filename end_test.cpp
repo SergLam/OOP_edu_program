@@ -26,29 +26,29 @@ void MainWindow::End_test(){
     }
     // Check answers from previous page //
     QString cb = cobm_16->currentText();
-    if(cb=="á"){
+    if(cb=="Ð±"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="á"){
+    if(cb!="Ð±"){
      result_num.append(false);
     }
     cb.clear();
     cb = cobm_17->currentText();
-    if(cb=="ã"){
+    if(cb=="Ð³"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="ã"){
+    if(cb!="Ð³"){
      result_num.append(false);
     }
     cb.clear();
     cb = cobm_18->currentText();
-    if(cb=="â"){
+    if(cb=="Ð²"){
       result=result+1;
       result_num.append(true);
     }
-    if(cb!="â"){
+    if(cb!="Ð²"){
      result_num.append(false);
     }
     // Calculate student mark
@@ -56,18 +56,12 @@ void MainWindow::End_test(){
     if(result>5 && result<=10) mark=3;
     if(result>10 && result<=15) mark=4;
     if(result>15) mark=5;
-    /*
-Ñðàçó òîãäà ñêàæè, ñêîëüêî áóäó òåáå äîëæíà
-È òàêóþ øëÿïó âñïîìíèëà: ïðîñèëè åùå ñèñòåìó îöåíèâàíèÿ
-Ðåàëüíî ñäåëàòü ÷òî-òî òèïà çà 10 è ìåíüøå ïðàâèëüíûõ îòâåòîâ -
-3, îò 10 äî 16 - 4, è ïîñëå 16 - 5 â èòîãîâîé â êîíöå? Íàïðèìåð
-      */
     //
     table = new QTableWidget;
-    table->setColumnCount(3);  // tw - QTableWidget // êîë-âî ñòîëáöîâ
-    table->setRowCount(0); // êîë-âî ñòðîê
-    table->setMinimumWidth(340);  //çàäàòü ìèíèìàëüíóþ øèðèíó
-    table->setHorizontalHeaderLabels(QStringList()<<"Íîìåð âîïðîñà"<<"Îòâåò"<<"Íîìåð ðàçäåëà äëÿ ñàìîêîíòðîëÿ");
+    table->setColumnCount(3);  
+    table->setRowCount(0); 
+    table->setMinimumWidth(340);  
+    table->setHorizontalHeaderLabels(QStringList()<<"ÐÐ¾Ð¼ÐµÑ€ Ð²Ð¾Ð¿Ñ€Ð¾ÑÐ°"<<"ÐžÑ‚Ð²ÐµÑ‚"<<"ÐÐ¾Ð¼ÐµÑ€ Ñ€Ð°Ð·Ð´ÐµÐ»Ð° Ð´Ð»Ñ ÑÐ°Ð¼Ð¾ÐºÐ¾Ð½Ñ‚Ñ€Ð¾Ð»Ñ");
     // Filling results to table
     int row;
     for(int i=0;i<18;i++){
@@ -76,83 +70,83 @@ void MainWindow::End_test(){
         QString x = QString::number(i+1);
         table->setItem(i,0,new QTableWidgetItem(x));
         if(result_num[i]==true){
-            QString y = "Âåðíî";
+            QString y = "Ð’ÐµÑ€Ð½Ð¾";
             table->setItem(i,1,new QTableWidgetItem(y));
         }
         if(result_num[i]==false){
-            QString y = "Íåïðàâèëüíî";
+            QString y = "ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾";
             table->setItem(i,1,new QTableWidgetItem(y));
         }
     }
     //
     row = table->rowCount();
     table->setRowCount(row+1);
-    QString x = "Ïðàâèëüíûõ îòâåòîâ:";
+    QString x = "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ñ… Ð¾Ñ‚Ð²ÐµÑ‚Ð¾Ð²:";
     table->setItem(row,0,new QTableWidgetItem(x));
     QString y = QString::number(result);
     table->setItem(row,1,new QTableWidgetItem(y));
     // Set time to result table
     row = table->rowCount();
     table->setRowCount(row+1);
-    QString xx = "Âðåìÿ ïðîõîæäåíèÿ îáó÷åíèÿ:";
+    QString xx = "Ð’Ñ€ÐµÐ¼Ñ Ð¿Ñ€Ð¾Ñ…Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ Ð¾Ð±ÑƒÑ‡ÐµÐ½Ð¸Ñ:";
     table->setItem(row,0,new QTableWidgetItem(xx));
     QString yy = time_edu_table;
     table->setItem(row,1,new QTableWidgetItem(yy));
     // Set time to result table
     row = table->rowCount();
     table->setRowCount(row+1);
-    QString xxx = "Âðåìÿ ïðîõîæäåíèÿ òåñòà:";
+    QString xxx = "Ð’Ñ€ÐµÐ¼Ñ Ð¿Ñ€Ð¾Ñ…Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ Ñ‚ÐµÑÑ‚Ð°:";
     table->setItem(row,0,new QTableWidgetItem(xxx));
     QString yyy = time_test_table;
     table->setItem(row,1,new QTableWidgetItem(yyy));
     // number chapters in the theoretical material
     //
-    QString _1 = "1.Ïîíÿòèå êëàññîâ, ìåòîäîâ è îáúåêòîâ";
+   QString _1 = "1.ÐŸÐ¾Ð½ÑÑ‚Ð¸Ðµ ÐºÐ»Ð°ÑÑÐ¾Ð², Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð² Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²";
     table->setItem(0,2,new QTableWidgetItem(_1));
-    QString _2 = "7.Íàñëåäîâàíèå êëàññîâ";
+    QString _2 = "7.ÐÐ°ÑÐ»ÐµÐ´Ð¾Ð²Ð°Ð½Ð¸Ðµ ÐºÐ»Ð°ÑÑÐ¾Ð²";
     table->setItem(1,2,new QTableWidgetItem(_2));
-    QString _3 = "2.Îñíîâíûå ñâîéñòâà êëàññîâ è îáúåêòîâ";
+    QString _3 = "2.ÐžÑÐ½Ð¾Ð²Ð½Ñ‹Ðµ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð° ÐºÐ»Ð°ÑÑÐ¾Ð² Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²";
     table->setItem(2,2,new QTableWidgetItem(_3));
-    QString _4 = "3.Ñòðóêòóðà îáúÿâëåíèÿ êëàññîâ";
+    QString _4 = "3.Ð¡Ñ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ð° Ð¾Ð±ÑŠÑÐ²Ð»ÐµÐ½Ð¸Ñ ÐºÐ»Ð°ÑÑÐ¾Ð²";
     table->setItem(3,2,new QTableWidgetItem(_4));
-    QString _5 = "1.Ïîíÿòèå êëàññîâ, ìåòîäîâ è îáúåêòîâ";
+    QString _5 = "1.ÐŸÐ¾Ð½ÑÑ‚Ð¸Ðµ ÐºÐ»Ð°ÑÑÐ¾Ð², Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð² Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²";
     table->setItem(4,2,new QTableWidgetItem(_5));
-    QString _6 = "4.Ôóíêöèè êîíñòðóêòîðà è äåñòðóêòîðà";
+    QString _6 = "4.Ð¤ÑƒÐ½ÐºÑ†Ð¸Ð¸ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð° Ð¸ Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð°";
     table->setItem(5,2,new QTableWidgetItem(_6));
-    QString _7 = "2.Îñíîâíûå ñâîéñòâà êëàññîâ è îáúåêòîâ";
+    QString _7 = "2.ÐžÑÐ½Ð¾Ð²Ð½Ñ‹Ðµ ÑÐ²Ð¾Ð¹ÑÑ‚Ð²Ð° ÐºÐ»Ð°ÑÑÐ¾Ð² Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²";
     table->setItem(6,2,new QTableWidgetItem(_7));
-    QString _8 = "6.Îòäåëåíèå èíòåðôåéñà îò ðåàëèçàöèè";
+    QString _8 = "6.ÐžÑ‚Ð´ÐµÐ»ÐµÐ½Ð¸Ðµ Ð¸Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹ÑÐ° Ð¾Ñ‚ Ñ€ÐµÐ°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ð¸";
     table->setItem(7,2,new QTableWidgetItem(_8));
-    QString _9 = "1.Ïîíÿòèå êëàññîâ, ìåòîäîâ è îáúåêòîâ";
+    QString _9 = "1.ÐŸÐ¾Ð½ÑÑ‚Ð¸Ðµ ÐºÐ»Ð°ÑÑÐ¾Ð², Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð² Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²";
     table->setItem(8,2,new QTableWidgetItem(_9));
-    QString _10 = "5. set — ôóíêöèè è get — ôóíêöèè êëàññîâ";
+    QString _10 = "5. set â€” Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸ Ð¸ get â€” Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¸ ÐºÐ»Ð°ÑÑÐ¾Ð²";
     table->setItem(9,2,new QTableWidgetItem(_10));
-    QString _11 = "1.Ïîíÿòèå êëàññîâ, ìåòîäîâ è îáúåêòîâ";
+    QString _11 = "1.ÐŸÐ¾Ð½ÑÑ‚Ð¸Ðµ ÐºÐ»Ð°ÑÑÐ¾Ð², Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð² Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²";
     table->setItem(10,2,new QTableWidgetItem(_11));
-    QString _12 = "1.Ïîíÿòèå êëàññîâ, ìåòîäîâ è îáúåêòîâ";
+    QString _12 = "1.ÐŸÐ¾Ð½ÑÑ‚Ð¸Ðµ ÐºÐ»Ð°ÑÑÐ¾Ð², Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð² Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²";
     table->setItem(11,2,new QTableWidgetItem(_12));
-    QString _13 = "3. Ñòðóêòóðà îáúÿâëåíèÿ êëàññîâ";
+    QString _13 = "3. Ð¡Ñ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ð° Ð¾Ð±ÑŠÑÐ²Ð»ÐµÐ½Ð¸Ñ ÐºÐ»Ð°ÑÑÐ¾Ð²";
     table->setItem(12,2,new QTableWidgetItem(_13));
-    QString _14 = "1.Ïîíÿòèå êëàññîâ, ìåòîäîâ è îáúåêòîâ";
+    QString _14 = "1.ÐŸÐ¾Ð½ÑÑ‚Ð¸Ðµ ÐºÐ»Ð°ÑÑÐ¾Ð², Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð² Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²";
     table->setItem(13,2,new QTableWidgetItem(_14));
-    QString _15 = "1.Ïîíÿòèå êëàññîâ, ìåòîäîâ è îáúåêòîâ";
+    QString _15 = "1.ÐŸÐ¾Ð½ÑÑ‚Ð¸Ðµ ÐºÐ»Ð°ÑÑÐ¾Ð², Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð² Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²";
     table->setItem(14,2,new QTableWidgetItem(_15));
-    QString _16 = "1.Ïîíÿòèå êëàññîâ, ìåòîäîâ è îáúåêòîâ";
+    QString _16 = "1.ÐŸÐ¾Ð½ÑÑ‚Ð¸Ðµ ÐºÐ»Ð°ÑÑÐ¾Ð², Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð² Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²";
     table->setItem(15,2,new QTableWidgetItem(_16));
-    QString _17 = "1.Ïîíÿòèå êëàññîâ, ìåòîäîâ è îáúåêòîâ";
+    QString _17 = "1.ÐŸÐ¾Ð½ÑÑ‚Ð¸Ðµ ÐºÐ»Ð°ÑÑÐ¾Ð², Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð² Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²";
     table->setItem(16,2,new QTableWidgetItem(_17));
-    QString _18 = "1.Ïîíÿòèå êëàññîâ, ìåòîäîâ è îáúåêòîâ";
+    QString _18 = "1.ÐŸÐ¾Ð½ÑÑ‚Ð¸Ðµ ÐºÐ»Ð°ÑÑÐ¾Ð², Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð² Ð¸ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²";
     table->setItem(17,2,new QTableWidgetItem(_18));
     // display student mark in table
-    QString _19 = "Âàøà îöåíêà:"+QString::number(mark);
+    QString _19 = "Ð’Ð°ÑˆÐ° Ð¾Ñ†ÐµÐ½ÐºÐ°:"+QString::number(mark);
     table->setItem(19,2,new QTableWidgetItem(_19));
     //
     table->resizeRowsToContents();
     table->setColumnWidth(2,200);
     //
-    exit = new QPushButton("Çàâåðøèòü òåñò");
+    exit = new QPushButton("Ð—Ð°Ð²ÐµÑ€ÑˆÐ¸Ñ‚ÑŒ Ñ‚ÐµÑÑ‚");
     child_test_5 = new QWidget();
-    child_test_5->setWindowTitle("Ðåçóëüòàòû òåñòèðîâàíèÿ");
+    child_test_5->setWindowTitle("Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ");
     //
     test_grid_5 = new QGridLayout;
     test_grid_5->addWidget(table,0,0);
